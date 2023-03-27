@@ -1,4 +1,5 @@
-export interface IContainer {
+export interface ILevel {
+  id: string;
   length: number;
   positionZ: number;
   obstacles: {

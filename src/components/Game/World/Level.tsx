@@ -1,8 +1,8 @@
+import { ILevel } from "interfaces/Level";
 import Base from "./objects/Base";
 import ObstacleGenerator from "./objects/ObstacleGenerator";
-import { IContainer } from "interfaces/Container";
 
-function Container({ length, positionZ, obstacles, color }: IContainer) {
+function Container({ length, positionZ, obstacles, color }: ILevel) {
   return (
     <group position-z={positionZ}>
       {/* base ground */}
