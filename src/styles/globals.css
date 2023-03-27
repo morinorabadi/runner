@@ -10,8 +10,8 @@ body {
   overflow-x: hidden;
 }
 
-#__next{
-  background: #f2f2f2;
+#__next {
+  background: #333;
   width: 100vw;
   height: 100vh;
 }
