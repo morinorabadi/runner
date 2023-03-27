@@ -33,6 +33,17 @@ export const mutation = {
   gameStart: true,
 
   score: 0,
-
   gameSpeed: 1,
+
+  difficulty: 0.4,
 };
+
+/**
+ *
+ * difficulty property =>
+ * this property specified amount of
+ * obstacles in one line in each level
+ * near to 1.0 makes harder with more obstacles and
+ * near to 0.0 makes easer with less obstacles
+ *
+ */

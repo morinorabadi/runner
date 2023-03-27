@@ -6,14 +6,14 @@ import { useThree } from "@react-three/fiber";
 import { Vector3 } from "three";
 
 import Level from "../World/Level";
-import useWorldGenerator from "../World/useWorldGenerator";
+import { useSceneWorld } from "./useScene";
 
 function Scene() {
   useThree(({ camera }) => {
     camera.lookAt(new Vector3(0, 0, 20));
   });
 
-  const { parent, levels } = useWorldGenerator();
+  const { parent, levels } = useSceneWorld();
 
   return (
     <>

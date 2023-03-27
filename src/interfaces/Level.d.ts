@@ -8,6 +8,6 @@ export interface ILevel {
     right: IObstacle[];
   };
   color?: Color;
-  startPosition:number;
-  endPosition:number;
+  startPosition: number;
+  endPosition: number;
 }
