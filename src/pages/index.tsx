@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function Home() {
   return (
@@ -12,5 +12,5 @@ export default function Home() {
       <h1> runner game index page </h1>
       <h2> we are working on it </h2>
     </>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import { Canvas } from '@react-three/fiber'
-import Scene from '@/compnents/Game/Scene/Scene'
+import Head from "next/head";
+import { Canvas } from "@react-three/fiber";
+import Scene from "components/Game/Scene/Scene";
 
 export default function Home() {
   return (
@@ -12,12 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Canvas
-        shadows
-        camera={{ position: [0,15,-20] }}
-      >
-        <Scene/>
+      <Canvas shadows camera={{ position: [0, 10, -15] }}>
+        <Scene />
       </Canvas>
     </>
-  )
+  );
 }
