@@ -8,16 +8,21 @@ import { randomColor } from "utils/randomColor";
 import { v4 as uuidv4 } from "uuid";
 
 let lastLevelPosition = -20;
+let lastLevelLength = 0;
 
 function generateLevel(): ILevel {
   // generate random int (21 to 40)
-  // const length = Math.floor((Math.random() * 2 + 2 ) * 10) + 1
+  const length = Math.floor((Math.random() * 2 + 2) * 10) + 1;
+  const positionZ = lastLevelPosition + (lastLevelLength + length) / 2;
 
-  lastLevelPosition += 20;
+  // save last position and level length
+  lastLevelPosition = positionZ;
+  lastLevelLength = length;
+
   return {
     id: uuidv4(),
-    length: 20,
-    positionZ: lastLevelPosition,
+    length,
+    positionZ,
     obstacles: generateObstacles(),
     color: randomColor(),
   };
@@ -50,7 +55,7 @@ function useWorldGenerator() {
 
   useFrame(({ clock }, _) => {
     if (!parent.current) return;
-    parent.current.position.z = -clock.elapsedTime;
+    parent.current.position.z = -clock.elapsedTime * 4;
   });
 
   return { parent, levels };

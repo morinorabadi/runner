@@ -5,7 +5,7 @@ import Player from "../Player/Player";
 import { useThree } from "@react-three/fiber";
 import { Vector3 } from "three";
 
-import Container from "../World/Level";
+import Level from "../World/Level";
 import useWorldGenerator from "../World/useWorldGenerator";
 
 function Scene() {
@@ -39,7 +39,7 @@ function Scene() {
       {/* world */}
       <group ref={parent}>
         {levels.map((levelProps) => (
-          <Container key={levelProps.id} {...levelProps} />
+          <Level key={levelProps.id} {...levelProps} />
         ))}
       </group>
     </>
