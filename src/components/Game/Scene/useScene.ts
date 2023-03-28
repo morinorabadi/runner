@@ -7,6 +7,7 @@ import {
   DEFAULT_SCORE_FACTOR,
   INCREASE_SPEED_AFTER,
   INCREASE_SPEED_AMOUNT,
+  START_SPEED,
 } from "constants/index";
 import { ILevel } from "interfaces/World/Level";
 import { useEffect, useRef, useState } from "react";
@@ -42,7 +43,7 @@ export function useSceneWorld() {
     if (mutation.speedFactor !== newSpeedFactor) {
       mutation.speedFactor = newSpeedFactor;
       // update ui
-      const newSpeed = 1 + mutation.speedFactor * INCREASE_SPEED_AMOUNT;
+      const newSpeed = START_SPEED + mutation.speedFactor * INCREASE_SPEED_AMOUNT;
       setSpeed(newSpeed);
       mutation.speed = newSpeed;
     }
@@ -82,7 +83,7 @@ export function useSceneWorld() {
 //   let i;
 //   let j = 0;
 //   for (i = INCREASE_SPEED_AFTER; i < elapsedTime; i += INCREASE_SPEED_AFTER) {
-//     position += (1 + j * INCREASE_SPEED_AMOUNT) * INCREASE_SPEED_AFTER;
+//     position += (START_SPEED + j * INCREASE_SPEED_AMOUNT) * INCREASE_SPEED_AFTER;
 //     j++;
 //   }
 //   return position * DEFAULT_SPEED_FACTOR;

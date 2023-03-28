@@ -8,7 +8,13 @@ export const MIN_LEVEL_BACKWARD_LENGTH = -20;
 export const ALL_LEVEL_LENGTH = 120;
 
 // speed
+export const START_SPEED = 5
 export const DEFAULT_SPEED_FACTOR = 10;
-export const DEFAULT_SCORE_FACTOR = 20;
 export const INCREASE_SPEED_AFTER = 5;
 export const INCREASE_SPEED_AMOUNT = 0.2;
+
+//score
+export const DEFAULT_SCORE_FACTOR = 20;
+
+// obstacles
+export const OBSTACLES_OBJECTS_MIN_DISTANCE = 4

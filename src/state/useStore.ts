@@ -1,3 +1,4 @@
+import { START_SPEED } from "constants/index";
 import { PlayerMoveState } from "interfaces/player/PlayerMoveState";
 import { RefObject, createRef } from "react";
 import { Group } from "three";
@@ -29,7 +30,7 @@ export const useStore = create<State>()((set) => ({
   score: 0,
   setScore: (newScore) => set((_) => ({ score: newScore })),
 
-  speed: 1,
+  speed: START_SPEED,
   setSpeed: (newSpeed) => set((_) => ({ speed: newSpeed })),
 
   gameOver: false,
@@ -50,7 +51,7 @@ export const useStore = create<State>()((set) => ({
 }));
 
 export const mutation = {
-  speed: 1,
+  speed: START_SPEED,
   speedFactor: 0,
 
   position: 0,
