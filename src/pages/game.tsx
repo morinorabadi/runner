@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Canvas } from "@react-three/fiber";
 import Scene from "components/Game/Scene/Scene";
+import Parent from "components/Game/html/Parent";
 
 export default function Home() {
   return (
@@ -13,8 +14,10 @@ export default function Home() {
       </Head>
 
       <Canvas shadows camera={{ position: [0, 10, -15] }}>
+        <color attach="background" args={["#333"]} />
         <Scene />
       </Canvas>
+      <Parent />
     </>
   );
 }
