@@ -1,4 +1,4 @@
-import { ILevel } from "interfaces/Level";
+import { ILevel } from "interfaces/World/Level";
 import { mutation } from "state/useStore";
 import { randomColor } from "utils/randomColor";
 import { v4 as uuidv4 } from "uuid";

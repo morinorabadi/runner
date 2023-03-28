@@ -1,6 +1,6 @@
 // types
 import { line } from "interfaces/line";
-import { IObstacle } from "interfaces/obstacle";
+import { IObstacle } from "interfaces/World/obstacle";
 import Bottom from "./obstacle/Bottom";
 import Top from "./obstacle/Top";
 import { getLinePositionX } from "utils/getLinePositionX";

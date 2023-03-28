@@ -4,7 +4,7 @@ import {
   MIN_LEVEL_BACKWARD_LENGTH,
   ALL_LEVEL_LENGTH,
 } from "constants/index";
-import { ILevel } from "interfaces/Level";
+import { ILevel } from "interfaces/World/Level";
 import { useEffect, useRef, useState } from "react";
 import { Group } from "three";
 import { generateLevel } from "../World/generateLevel";
