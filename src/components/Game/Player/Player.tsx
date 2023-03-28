@@ -1,5 +1,5 @@
 import { useStore } from "state/useStore";
-import { usePlayer } from "./usePlaye";
+import { usePlayer } from "./usePlayer";
 
 function Player() {
   const { player } = useStore();

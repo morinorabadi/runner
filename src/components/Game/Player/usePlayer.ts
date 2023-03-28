@@ -1,6 +1,6 @@
 import { LINE_WIDTH } from "constants/index";
 import { useEffect } from "react";
-import { useStore } from "state/useStore";
+import { useStore, mutation } from "state/useStore";
 import { gsap } from "gsap";
 
 export function usePlayer() {
@@ -12,8 +12,7 @@ export function usePlayer() {
     if (!player.current) return;
 
     gsap.to(player.current.position, {
-      duration: 0.1,
-      // todo add speed factor
+      duration: 0.4 / mutation.speed,
       x: -playerCurrentLine * LINE_WIDTH,
     });
   }, [playerCurrentLine, player]);
@@ -29,7 +28,7 @@ export function usePlayer() {
       yoyo: true,
       repeat: 1,
       y: positionY,
-      duration: 0.4,
+      duration: 0.6 / mutation.speed, // always its repeat once an
       onComplete: () => {
         setPlayerMoveState("run");
       },
