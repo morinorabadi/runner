@@ -8,9 +8,13 @@ interface State {
   setScore: (newScore: number) => void;
 
   gameOver: boolean;
+  setGameOver: (over: boolean) => void;
+
   gameStarted: boolean;
   setGameStarted: (started: boolean) => void;
-  setGameOver: (over: boolean) => void;
+
+  speed: number;
+  setSpeed: (newSpeed: number) => void;
 
   player: RefObject<Group>;
 
@@ -25,12 +29,17 @@ export const useStore = create<State>()((set) => ({
   score: 0,
   setScore: (newScore) => set((_) => ({ score: newScore })),
 
+  speed: 1,
+  setSpeed: (newSpeed) => set((_) => ({ speed: newSpeed })),
+
   gameOver: false,
-  gameStarted: false,
-  setGameStarted: (started) => set((_) => ({ gameStarted: started })),
   setGameOver: (over) => set((_) => ({ gameOver: over })),
 
+  gameStarted: false,
+  setGameStarted: (started) => set((_) => ({ gameStarted: started })),
+
   player: createRef(),
+
   playerCurrentLine: 0,
   setPlayerCurrentLine: (newLine) =>
     set((_) => ({ playerCurrentLine: newLine })),
@@ -41,13 +50,12 @@ export const useStore = create<State>()((set) => ({
 }));
 
 export const mutation = {
-  gameOver: false,
-  gameStart: true,
+  speed: 1,
+  speedFactor: 0,
 
-  score: 0,
-  gameSpeed: 1,
+  position: 0,
 
-  difficulty: 0.4,
+  difficulty: 0.1,
 };
 
 /**
