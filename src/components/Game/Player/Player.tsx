@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
-import { Group } from "three";
+import { useStore } from "state/useStore";
+import { usePlayer } from "./usePlaye";
 
 function Player() {
-  const group = useRef<Group>(null);
-
+  const { player } = useStore();
+  usePlayer();
   return (
-    <group ref={group}>
-      <mesh castShadow position={[0, 2, 0]} scale={[1, 4, 1]}>
+    <group ref={player}>
+      <mesh castShadow position-y={2} scale={[1, 4, 1]}>
         <boxGeometry />
         <meshStandardMaterial />
       </mesh>

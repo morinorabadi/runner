@@ -1,31 +1,43 @@
+import { PlayerMoveState } from "interfaces/player/PlayerMoveState";
 import { RefObject, createRef } from "react";
-import { Group, PerspectiveCamera } from "three";
+import { Group } from "three";
 import { create } from "zustand";
 
 interface State {
   score: number;
+  setScore: (newScore: number) => void;
+
   gameOver: boolean;
   gameStarted: boolean;
-
-  camera: RefObject<PerspectiveCamera>;
-  character: RefObject<Group>;
-
-  setScore: (newScore: number) => void;
   setGameStarted: (started: boolean) => void;
   setGameOver: (over: boolean) => void;
+
+  player: RefObject<Group>;
+
+  playerCurrentLine: number;
+  setPlayerCurrentLine: (newLine: number) => void;
+
+  playerMoveState: PlayerMoveState;
+  setPlayerMoveState: (newMoveState: PlayerMoveState) => void;
 }
 
 export const useStore = create<State>()((set) => ({
   score: 0,
+  setScore: (newScore) => set((_) => ({ score: newScore })),
+
   gameOver: false,
   gameStarted: false,
-
-  camera: createRef(),
-  character: createRef(),
-
-  setScore: (newScore) => set((_) => ({ score: newScore })),
   setGameStarted: (started) => set((_) => ({ gameStarted: started })),
   setGameOver: (over) => set((_) => ({ gameOver: over })),
+
+  player: createRef(),
+  playerCurrentLine: 0,
+  setPlayerCurrentLine: (newLine) =>
+    set((_) => ({ playerCurrentLine: newLine })),
+
+  playerMoveState: "run",
+  setPlayerMoveState: (newMoveState) =>
+    set((_) => ({ playerMoveState: newMoveState })),
 }));
 
 export const mutation = {
