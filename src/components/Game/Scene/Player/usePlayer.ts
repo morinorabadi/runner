@@ -2,10 +2,19 @@ import { LINE_WIDTH } from "constants/index";
 import { useEffect } from "react";
 import { useStore, mutation } from "state/useStore";
 import { gsap } from "gsap";
+import { shallow } from "zustand/shallow";
 
 export function usePlayer() {
-  const { player, playerCurrentLine, playerMoveState, setPlayerMoveState } =
-    useStore();
+  const [player, playerCurrentLine, playerMoveState, setPlayerMoveState] =
+    useStore(
+      (state) => [
+        state.player,
+        state.playerCurrentLine,
+        state.playerMoveState,
+        state.setPlayerMoveState,
+      ],
+      shallow
+    );
 
   // changing line logic
   useEffect(() => {

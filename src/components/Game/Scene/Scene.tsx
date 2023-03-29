@@ -1,11 +1,10 @@
-import React from "react";
 // import { OrbitControls } from "@react-three/drei";
 
-import Player from "../Player/Player";
+import Player from "./Player/Player";
 import { useThree } from "@react-three/fiber";
 import { Vector3 } from "three";
 
-import Level from "../World/Level";
+import Level from "./World/Level";
 import { useSceneWorld } from "./useScene";
 
 function Scene() {

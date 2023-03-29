@@ -3,7 +3,7 @@ import { line } from "interfaces/line";
 import { IObstacle } from "interfaces/World/obstacle";
 import Bottom from "./obstacle/Bottom";
 import Top from "./obstacle/Top";
-import { getLinePositionX } from "utils/getLinePositionX";
+import { getLinePositionX } from "utils/getLineInformation.utils";
 
 interface ObstacleGeneratorInterface {
   obstacles: IObstacle[];

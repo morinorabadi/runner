@@ -2,7 +2,7 @@ import { useStore } from "state/useStore";
 import { usePlayer } from "./usePlayer";
 
 function Player() {
-  const { player } = useStore();
+  const player = useStore((state) => state.player);
   usePlayer();
   return (
     <group ref={player}>

@@ -1,4 +1,4 @@
-import { ILevel } from "interfaces/Level";
+import { ILevel } from "interfaces/World/Level";
 import Base from "./objects/Base";
 import ObstacleGenerator from "./objects/ObstacleGenerator";
 

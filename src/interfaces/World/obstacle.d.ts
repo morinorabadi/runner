@@ -1,4 +1,15 @@
+import { PlayerMoveState } from "interfaces/player/PlayerMoveState";
+
+interface hipPoint {
+  start: number;
+  end: number;
+}
+
+export type IObstacleTypes = "top" | "bottom";
+
 export interface IObstacle {
   positionZ: number;
-  type: "top" | "bottom";
+  type: IObstacleTypes;
+  hipPoint: hipPoint;
+  optimumMoveState: PlayerMoveState;
 }
